@@ -1,0 +1,12 @@
+1编写一个Service接口
+接口中的方法分别为 save(Object obj),delete(String id),update(Object obj),queryData(String hql,Object[]values)
+
+2.编写一个GoodsService,GoodsTypeService类实现Service接口,并在类的方法中打印一条语句
+
+
+3.使用动态代理技术为GoodsService和GoodsTypeService做代理
+
+  3.1 要求在调用代理对象的save方法时在InvocationHandler 中的invok方法中计算Save方法的执行时间（其它方法不计算）
+  3.2 要求在调用代理对象的delete方法时在InvocationHandler 中的invok方法打印添加了运行期监控
+  3.3 要求在调用代理对象的queryData方法时在InvocationHandler 中的invok方法中打印queryData方法传递过来的参数
+

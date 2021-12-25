@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Spring的全局配置文件
+     将类 交给Spring容器管理
+
+    -->
+
+
+    <bean id="userServlet" class="com.servlet.UserServlet">
+        <!--实现依赖注入
+            name="userService 表示 UserServlet中有一个属性，名为userSerivce
+            ref="userSrvice"  表示引用一个id=userSrvice 的实例，调用UserServlet类中的setUserService方法，将UserServiceImpl对象传入进去
+      -->
+        <property name="us" ref="userServiceNew"></property>
+    </bean>
+
+
+    <bean id="userDao" class="com.dao.impl.UserDaoImpl"></bean>
+
+
+
+
+    <!--若 id 没有指定，Spring 自动将全限定性类（包名+类名）名作为 Bean 的名字
+
+        context.getBean("com.dao.impl.UserDaoImpl")
+    -->
+    <bean class="com.dao.impl.UserDaoImpl"></bean>
+
+
+    <!--通过调用构造方法，把userServlet2类依赖的UserServcie传入进去-->
+    <bean id="userservlet2" class="com.servlet.UserServlet2">
+        <!-- 把id=userServiceNew 对应的UserService实例通过构造方法传入进去-->
+        <constructor-arg ref="userServiceNew"></constructor-arg>
+        
+
+
+    </bean>
+
+
+
+    <!--通过构造方法注入属性值  用index表示构造方法的参数索引 0表示第一个参数-->
+    <bean id="jdbcUtil2" class="com.util.JdbcUtil">
+
+        <constructor-arg value="jerry8023" index="1"></constructor-arg>
+        <constructor-arg value="root" index="2"></constructor-arg>
+        <constructor-arg value="jdbc:mysql:127.0.0.1/dxx" index="0"></constructor-arg>
+    </bean>
+
+    <!--通过属性注入，调用setXXX方法把value值传入进去-->
+    <bean id="jdbcUtil" class="com.util.JdbcUtil">
+        <property name="url" value="jdbc:mysql//:127.0.0.1/xxx"/> <!--通过反射技术将value属性值通过setUrl传入到JdbcUtil对象中-->
+        <property name="username" value="root"></property>
+        <property name="password" value="jerry8012"></property>
+    </bean>
+
+
+    <!--为javaBean的集合类型属性(list,set,Map)注入值-->
+    <bean id="resource" class="com.util.Resource">
+            <property name="name" value="资源"></property>
+
+        <!-- private Map<String,String> dbconfig;-->
+        <property name="dbconfig">
+            <map>
+                 <!--创建Map对象，将entry中的key value做为map的key value,并将该map对象做为setDbconfig的参数传入进去-->
+                <entry value="jdbc:mysql...." key="url"></entry>
+                <entry value="123" key="password"></entry>
+                <entry value="root" key="username"></entry>
+            </map>
+        </property>
+
+        <property name="properties">
+            <props>  <!--
+                    微信小程序，微信公众号
+                        -->
+                <prop key="url" >jdbc:mysql</prop>
+                <prop key="username" >values1212</prop>
+                <prop key="password">
+                    <![CDATA[
+                        jerry&<>&71!22%]
+                     ]]>
+                </prop>
+            </props>
+        </property>
+
+        <property name="list">
+            <list>
+                <value>l1</value>
+                <value>l2</value>
+                <value>l3</value>
+
+            </list>
+        </property>
+        <property name="set"> <!--"重复"  equals  返回 true -->
+            <set>
+                <ref bean="userServlet" ></ref>
+
+            </set>
+        </property>
+
+    </bean>
+
+
+
+
+
+    <bean id="userSrvice" class="com.service.impl.UserServiceImpl"></bean>
+
+    <bean id="userServiceNew" class="com.service.impl.UserServicenewImpl"></bean>
+
+    <!--autowire="byType" UserServlet中有一个UserService类型的属性需要注入
+       autowire="byType" 就会在整个spring容器中找一个UserServcie接口的实现类，自动注入到UserService属性上
+       -->
+    <bean id="userServletAuto" class="com.servlet.UserServlet" autowire="byName" >
+
+    </bean>
+
+
+
+
+
+
+    <!--通过以下PropertyPlaceholderConfigurer读取classpath下的jdbc.propertis配置文件
+    然后在当前application.xml配置文件中就可以使用${}引用jdbc.propertis配置文件内容了
+
+    将PropertyPlaceholderConfigurer纳入spring容器管理 ，是否可以通过getBean方法拿到这个类的对象
+
+    -->
+    <bean id="placeholderConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <!--给location属性赋值 ，在此类的内部就会去读取classpath:properties配置文件 -->
+        <property name="location" value="classpath:jdbc.properties"></property>
+    </bean>
+
+    <!--把commons dbcp2 纳入spring容器管理 XML DOM解析  生成XML
+
+    ${driverClassName}表示引用 jdbc.properties配置文件的driverClassName
+    -->
+    <bean id="datasource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="closeConnectionPool">
+        <property name="driverClassName" value="${driver}"></property>
+        <property name="password" value="${password}"></property>
+        <property name="username" value="${username}"></property>
+        <property name="url" value="${url}"></property>
+    </bean>
+
+
+    <!--
+     当  Personnel对象被创建时 调用Personnel类中的init 方法   init-method="init"
+
+    当  Spring容器关闭时    调用Personnel类中的destroy 方法   destroy-method="destroy"
+
+    当为spring管理 的Bean  配置了 init-method="init"  和 destroy-method="destroy"
+    是否在对象创建时一定会调用init方法
+    是否在容器销毁时一定会调用destory方法
+     当scope="prototype"时 destory方法是不会被调用的
+     当scope="singleton" 时  destory方法是会被调用
+     原因：单例模式的JavaBean是一直存在于spring容器中，每次调用getBean方法都得到的是同一个实例
+          原型模式（prototype）是每次调用getBean方法才创建一个新的对象，该对象的是被创建出来之后不再归容器管理，是交给JVM管理 的
+    -->
+
+
+    <bean id="personnel" class="com.bean.Personnel" scope="prototype" init-method="init" destroy-method="destroy"></bean>
+
+</beans>

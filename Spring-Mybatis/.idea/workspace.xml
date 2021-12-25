@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="00f6c909-a73f-428b-b970-f09d7e81ca85" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="dormsystem@192.168.30.8" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="dormsystem@192.168.30.8" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="dormsystem@192.168.30.8" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="dormsystem: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="dormsystem@192.168.30.8" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="dormsystem: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="tbl_order_details: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Spring-Mybatis" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:/Program Files/apache-maven-3.8.2" />
+        <option name="userSettingsFile" value="C:\Program Files\apache-maven-3.8.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="jdkForImporter" value="#JAVA_HOME" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="8" />
+    <option name="vmOptions" value="-Dfile.encoding=GB2312" />
+  </component>
+  <component name="ProjectId" id="21RnHl13QB0vx6I2bV7yqpW1yib" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/com/mapper" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/test/java/mapper/he.cpp" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.service.impl" />
+      <recent name="com.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\Spring学习\Spring-Mybatis\src\main\resources\com\mapper" />
+      <recent name="C:\Users\Administrator\Desktop\Spring学习\Spring-Mybatis\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.T.t7">
+    <configuration name="T.t1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spring-Mybatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mapper" />
+      <option name="MAIN_CLASS_NAME" value="mapper.T" />
+      <option name="METHOD_NAME" value="t1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="T.t2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spring-Mybatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mapper" />
+      <option name="MAIN_CLASS_NAME" value="mapper.T" />
+      <option name="METHOD_NAME" value="t2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="T.t4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spring-Mybatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mapper" />
+      <option name="MAIN_CLASS_NAME" value="mapper.T" />
+      <option name="METHOD_NAME" value="t4" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="T.t7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spring-Mybatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mapper" />
+      <option name="MAIN_CLASS_NAME" value="mapper.T" />
+      <option name="METHOD_NAME" value="t7" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRedisCon.t3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spring-Mybatis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mapper" />
+      <option name="MAIN_CLASS_NAME" value="mapper.TestRedisCon" />
+      <option name="METHOD_NAME" value="t3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Spring-Mybatis [mybatis-generator:generate...]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+                <option value="-e" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.TestRedisCon.t3" />
+      <item itemvalue="JUnit.T.t1" />
+      <item itemvalue="JUnit.T.t2" />
+      <item itemvalue="JUnit.T.t4" />
+      <item itemvalue="JUnit.T.t7" />
+      <item itemvalue="Maven.Spring-Mybatis [mybatis-generator:generate...]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.T.t7" />
+        <item itemvalue="JUnit.T.t4" />
+        <item itemvalue="JUnit.T.t1" />
+        <item itemvalue="JUnit.T.t2" />
+        <item itemvalue="JUnit.TestRedisCon.t3" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="00f6c909-a73f-428b-b970-f09d7e81ca85" name="Default Changelist" comment="" />
+      <created>1637912681445</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637912681445</updated>
+      <workItem from="1637912684747" duration="17575000" />
+      <workItem from="1637975167641" duration="13431000" />
+      <workItem from="1638079576222" duration="139000" />
+      <workItem from="1638182323701" duration="4368000" />
+      <workItem from="1638193922913" duration="405000" />
+      <workItem from="1638261888276" duration="10021000" />
+      <workItem from="1638357414888" duration="658000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="137" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1637913233460">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="137" y="42" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1637913233460" />
+    <state x="488" y="103" key="#com.intellij.ide.util.MemberChooser" timestamp="1638002207824">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="488" y="103" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1638002207824" />
+    <state x="92" y="92" width="1182" height="584" key="DiffContextDialog" timestamp="1637935829035">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="92" y="92" width="1182" height="584" key="DiffContextDialog/0.0.1366.768@0.0.1366.768" timestamp="1637935829035" />
+    <state x="463" y="142" key="FileChooserDialogImpl" timestamp="1638361078292">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="463" y="142" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1638361078292" />
+    <state x="496" y="282" key="Github.CreateGistDialog" timestamp="1637925903947">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="496" y="282" key="Github.CreateGistDialog/0.0.1366.768@0.0.1366.768" timestamp="1637925903947" />
+    <state width="1323" height="158" key="GridCell.Tab.0.bottom" timestamp="1638269860775">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="158" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1638269860775" />
+    <state width="1323" height="158" key="GridCell.Tab.0.center" timestamp="1638269860775">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="158" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1638269860775" />
+    <state width="1323" height="158" key="GridCell.Tab.0.left" timestamp="1638269860775">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="158" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1638269860775" />
+    <state width="1323" height="158" key="GridCell.Tab.0.right" timestamp="1638269860775">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="158" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1638269860775" />
+    <state width="1323" height="65" key="GridCell.Tab.1.bottom" timestamp="1638269704490">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="65" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1638269704490" />
+    <state width="1323" height="65" key="GridCell.Tab.1.center" timestamp="1638269704490">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="65" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1638269704490" />
+    <state width="1323" height="65" key="GridCell.Tab.1.left" timestamp="1638269704490">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="65" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1638269704490" />
+    <state width="1323" height="65" key="GridCell.Tab.1.right" timestamp="1638269704490">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="65" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1638269704490" />
+    <state width="230" height="477" key="HiddenNamespacesPopup" timestamp="1637913251013">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="230" height="477" key="HiddenNamespacesPopup/0.0.1366.768@0.0.1366.768" timestamp="1637913251013" />
+    <state x="186" y="29" key="SettingsEditor" timestamp="1637925413226">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="186" y="29" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1637925413226" />
+    <state x="57" y="88" key="new project wizard" timestamp="1638361086465">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="57" y="88" key="new project wizard/0.0.1366.768@0.0.1366.768" timestamp="1638361086465" />
+    <state x="339" y="172" key="run.anything.popup" timestamp="1638261898962">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1638261898962" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1637997857652">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1637997857652" />
+    <state x="405" y="301" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1637929859074">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="405" y="301" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1366.768@0.0.1366.768" timestamp="1637929859074" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/mapper/TestRedisCon.java</url>
+          <line>32</line>
+          <properties class="mapper.TestRedisCon" method="t2">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/mapper/TestAbstract.java</url>
+          <line>101</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

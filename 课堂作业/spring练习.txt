@@ -1,0 +1,40 @@
+1定义一个Person类
+  在Person类中定义一个伐木的方法
+
+2.定义一个斧头接口(Axe)
+   接口中定义一个砍(chop)方法
+3.定义石斧(StoneAxe)类，该类实现斧头接口
+   在chop方法中打印用石斧伐木好累
+
+4.定义钢(SteelAxe)斧类，该类实现斧头接口
+   在chop方法中打印用钢斧伐木很爽
+
+
+5.在Person类中定义一个Axe斧头属性，并在伐木方法中调用Axe中的chop方法
+
+
+请将Person,StoneAxe,SteelAxe三个类交给Spring容器管理
+
+在配置文件中注入一个StoneAxe给Person
+
+通过容器调用获得Person类的对象并调用的伐木方法，查看打印结果
+ 
+
+修改配置文件，将SteelAxe注入给Person
+
+通过容器调用获得Person类的对象并调用的伐木方法，查看打印结果
+ 
+
+
+-------------------------------------------------------------
+
+定义一个PersonAction类
+
+ 在此类中定义 url,userName,pwd三个字符串类型的属性
+ 并分别定义 Set,list,Map集合
+
+要求将PersonAction 交给Spring容器管理 并为以上属性赋值
+通过容器调用获得PersonAction 类的对象将此类中定义的属性值打印到控制台
+
+
+

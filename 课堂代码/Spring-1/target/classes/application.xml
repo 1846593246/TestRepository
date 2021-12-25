@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--Spring的全局配置文件
+     将类 交给Spring容器管理
+
+    -->
+
+    <bean id="userServlet" class="com.servlet.UserServlet">
+        <!--实现依赖注入
+            name="userService 表示 UserServlet中有一个属性，名为userSerivce
+            ref="userSrvice"  表示引用一个id=userSrvice 的实例，调用UserServlet类中的setUserService方法，将UserServiceImpl对象传入进去
+
+        -->
+        <property name="us" ref="userServiceNew"></property>
+
+    </bean>
+
+    <bean id="userSrvice" class="com.service.impl.UserServiceImpl"></bean>
+    <bean id="userServiceNew" class="com.service.impl.UserServicenewImpl"></bean>
+
+    <bean id="userDao" class="com.dao.impl.UserDaoImpl"></bean>
+
+</beans>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.FacemachineBeanMapper" >
+  <resultMap id="BaseResultMap" type="com.bean.FacemachineBean" >
+    <id column="machineid" property="machineid" jdbcType="VARCHAR" />
+    <result column="addressCode" property="addresscode" jdbcType="VARCHAR" />
+    <result column="machineName" property="machinename" jdbcType="VARCHAR" />
+    <result column="machineIp" property="machineip" jdbcType="VARCHAR" />
+    <result column="pwd" property="pwd" jdbcType="VARCHAR" />
+    <result column="lastOnlineDate" property="lastonlinedate" jdbcType="VARCHAR" />
+    <result column="heartBeatURL" property="heartbeaturl" jdbcType="VARCHAR" />
+    <result column="invoiceURL" property="invoiceurl" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    machineid, addressCode, machineName, machineIp, pwd, lastOnlineDate, heartBeatURL, 
+    invoiceURL
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.bean.FacemachineBeanExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_facemachine
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_facemachine
+    where machineid = #{machineid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tbl_facemachine
+    where machineid = #{machineid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.bean.FacemachineBeanExample" >
+    delete from tbl_facemachine
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.bean.FacemachineBean" >
+    insert into tbl_facemachine (machineid, addressCode, machineName, 
+      machineIp, pwd, lastOnlineDate, 
+      heartBeatURL, invoiceURL)
+    values (#{machineid,jdbcType=VARCHAR}, #{addresscode,jdbcType=VARCHAR}, #{machinename,jdbcType=VARCHAR}, 
+      #{machineip,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{lastonlinedate,jdbcType=VARCHAR}, 
+      #{heartbeaturl,jdbcType=VARCHAR}, #{invoiceurl,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bean.FacemachineBean" >
+    insert into tbl_facemachine
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="machineid != null" >
+        machineid,
+      </if>
+      <if test="addresscode != null" >
+        addressCode,
+      </if>
+      <if test="machinename != null" >
+        machineName,
+      </if>
+      <if test="machineip != null" >
+        machineIp,
+      </if>
+      <if test="pwd != null" >
+        pwd,
+      </if>
+      <if test="lastonlinedate != null" >
+        lastOnlineDate,
+      </if>
+      <if test="heartbeaturl != null" >
+        heartBeatURL,
+      </if>
+      <if test="invoiceurl != null" >
+        invoiceURL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="machineid != null" >
+        #{machineid,jdbcType=VARCHAR},
+      </if>
+      <if test="addresscode != null" >
+        #{addresscode,jdbcType=VARCHAR},
+      </if>
+      <if test="machinename != null" >
+        #{machinename,jdbcType=VARCHAR},
+      </if>
+      <if test="machineip != null" >
+        #{machineip,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="lastonlinedate != null" >
+        #{lastonlinedate,jdbcType=VARCHAR},
+      </if>
+      <if test="heartbeaturl != null" >
+        #{heartbeaturl,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceurl != null" >
+        #{invoiceurl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.bean.FacemachineBeanExample" resultType="java.lang.Integer" >
+    select count(*) from tbl_facemachine
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tbl_facemachine
+    <set >
+      <if test="record.machineid != null" >
+        machineid = #{record.machineid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.addresscode != null" >
+        addressCode = #{record.addresscode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.machinename != null" >
+        machineName = #{record.machinename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.machineip != null" >
+        machineIp = #{record.machineip,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pwd != null" >
+        pwd = #{record.pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lastonlinedate != null" >
+        lastOnlineDate = #{record.lastonlinedate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.heartbeaturl != null" >
+        heartBeatURL = #{record.heartbeaturl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.invoiceurl != null" >
+        invoiceURL = #{record.invoiceurl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tbl_facemachine
+    set machineid = #{record.machineid,jdbcType=VARCHAR},
+      addressCode = #{record.addresscode,jdbcType=VARCHAR},
+      machineName = #{record.machinename,jdbcType=VARCHAR},
+      machineIp = #{record.machineip,jdbcType=VARCHAR},
+      pwd = #{record.pwd,jdbcType=VARCHAR},
+      lastOnlineDate = #{record.lastonlinedate,jdbcType=VARCHAR},
+      heartBeatURL = #{record.heartbeaturl,jdbcType=VARCHAR},
+      invoiceURL = #{record.invoiceurl,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bean.FacemachineBean" >
+    update tbl_facemachine
+    <set >
+      <if test="addresscode != null" >
+        addressCode = #{addresscode,jdbcType=VARCHAR},
+      </if>
+      <if test="machinename != null" >
+        machineName = #{machinename,jdbcType=VARCHAR},
+      </if>
+      <if test="machineip != null" >
+        machineIp = #{machineip,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        pwd = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="lastonlinedate != null" >
+        lastOnlineDate = #{lastonlinedate,jdbcType=VARCHAR},
+      </if>
+      <if test="heartbeaturl != null" >
+        heartBeatURL = #{heartbeaturl,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceurl != null" >
+        invoiceURL = #{invoiceurl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where machineid = #{machineid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bean.FacemachineBean" >
+    update tbl_facemachine
+    set addressCode = #{addresscode,jdbcType=VARCHAR},
+      machineName = #{machinename,jdbcType=VARCHAR},
+      machineIp = #{machineip,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      lastOnlineDate = #{lastonlinedate,jdbcType=VARCHAR},
+      heartBeatURL = #{heartbeaturl,jdbcType=VARCHAR},
+      invoiceURL = #{invoiceurl,jdbcType=VARCHAR}
+    where machineid = #{machineid,jdbcType=VARCHAR}
+  </update>
+</mapper>

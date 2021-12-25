@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.OrderBeanMapper" >
+
+  <insert id="saveOrder" parameterType="com.bean.OrderBean">
+    insert into tbl_order (id, ordertime, name,
+      address)
+    values (#{id,jdbcType=VARCHAR}, #{ordertime}, #{name,jdbcType=VARCHAR},
+      #{address,jdbcType=VARCHAR})
+  </insert>
+
+  <insert id="generatorOrder" parameterType="com.bean.OrderBean">
+     insert into tbl_order (id, ordertime, name,
+      address)
+    values (#{id,jdbcType=VARCHAR}, #{ordertime}, #{name,jdbcType=VARCHAR},
+      #{address,jdbcType=VARCHAR})
+  </insert>
+</mapper>

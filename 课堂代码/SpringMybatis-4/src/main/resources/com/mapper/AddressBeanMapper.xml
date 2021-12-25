@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.AddressBeanMapper" >
+  <resultMap id="BaseResultMap" type="com.bean.AddressBean" >
+    <id column="addressCode" property="addresscode" jdbcType="VARCHAR" />
+    <result column="parentAddressCode" property="parentaddresscode" jdbcType="VARCHAR" />
+    <result column="roomTypeId" property="roomtypeid" jdbcType="VARCHAR" />
+    <result column="addressName" property="addressname" jdbcType="VARCHAR" />
+    <result column="benNum" property="bennum" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    addressCode, parentAddressCode, roomTypeId, addressName, benNum
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.bean.AddressBeanExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_address
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_address
+    where addressCode = #{addresscode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tbl_address
+    where addressCode = #{addresscode,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.bean.AddressBeanExample" >
+    delete from tbl_address
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.bean.AddressBean" >
+    insert into tbl_address (addressCode, parentAddressCode, roomTypeId, 
+      addressName, benNum)
+    values (#{addresscode,jdbcType=VARCHAR}, #{parentaddresscode,jdbcType=VARCHAR}, #{roomtypeid,jdbcType=VARCHAR}, 
+      #{addressname,jdbcType=VARCHAR}, #{bennum,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bean.AddressBean" >
+    insert into tbl_address
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="addresscode != null" >
+        addressCode,
+      </if>
+      <if test="parentaddresscode != null" >
+        parentAddressCode,
+      </if>
+      <if test="roomtypeid != null" >
+        roomTypeId,
+      </if>
+      <if test="addressname != null" >
+        addressName,
+      </if>
+      <if test="bennum != null" >
+        benNum,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="addresscode != null" >
+        #{addresscode,jdbcType=VARCHAR},
+      </if>
+      <if test="parentaddresscode != null" >
+        #{parentaddresscode,jdbcType=VARCHAR},
+      </if>
+      <if test="roomtypeid != null" >
+        #{roomtypeid,jdbcType=VARCHAR},
+      </if>
+      <if test="addressname != null" >
+        #{addressname,jdbcType=VARCHAR},
+      </if>
+      <if test="bennum != null" >
+        #{bennum,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.bean.AddressBeanExample" resultType="java.lang.Integer" >
+    select count(*) from tbl_address
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tbl_address
+    <set >
+      <if test="record.addresscode != null" >
+        addressCode = #{record.addresscode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.parentaddresscode != null" >
+        parentAddressCode = #{record.parentaddresscode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.roomtypeid != null" >
+        roomTypeId = #{record.roomtypeid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.addressname != null" >
+        addressName = #{record.addressname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bennum != null" >
+        benNum = #{record.bennum,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tbl_address
+    set addressCode = #{record.addresscode,jdbcType=VARCHAR},
+      parentAddressCode = #{record.parentaddresscode,jdbcType=VARCHAR},
+      roomTypeId = #{record.roomtypeid,jdbcType=VARCHAR},
+      addressName = #{record.addressname,jdbcType=VARCHAR},
+      benNum = #{record.bennum,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bean.AddressBean" >
+    update tbl_address
+    <set >
+      <if test="parentaddresscode != null" >
+        parentAddressCode = #{parentaddresscode,jdbcType=VARCHAR},
+      </if>
+      <if test="roomtypeid != null" >
+        roomTypeId = #{roomtypeid,jdbcType=VARCHAR},
+      </if>
+      <if test="addressname != null" >
+        addressName = #{addressname,jdbcType=VARCHAR},
+      </if>
+      <if test="bennum != null" >
+        benNum = #{bennum,jdbcType=INTEGER},
+      </if>
+    </set>
+    where addressCode = #{addresscode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bean.AddressBean" >
+    update tbl_address
+    set parentAddressCode = #{parentaddresscode,jdbcType=VARCHAR},
+      roomTypeId = #{roomtypeid,jdbcType=VARCHAR},
+      addressName = #{addressname,jdbcType=VARCHAR},
+      benNum = #{bennum,jdbcType=INTEGER}
+    where addressCode = #{addresscode,jdbcType=VARCHAR}
+  </update>
+</mapper>

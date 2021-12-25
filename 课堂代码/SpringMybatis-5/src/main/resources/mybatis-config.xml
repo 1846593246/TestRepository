@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+
+    <settings>
+        <!-- 打印sql日志
+
+        <setting name="autoMappingBehavior" value="null"/>
+        -->
+        <!--开启二级缓存-->
+        <setting name="cacheEnabled" value="true"/>
+
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+    </settings>
+
+    <plugins>
+        <!--配置分页插件拦截器
+        com.github.pagehelper.PageHelper cannot be cast to org.apache.ibatis.plugin.Interceptor
+        -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
+
+
+</configuration>

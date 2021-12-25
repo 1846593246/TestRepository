@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+    <context:annotation-config></context:annotation-config>
+    <!--    <context:component-scan base-package="com.test.impl"></context:component-scan>-->
+    <context:annotation-config></context:annotation-config>
+    <!--    AOP-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+
+    <bean id="placeholderConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <!--给location属性赋值 ，在此类的内部就会去读取classpath:properties配置文件 -->
+        <property name="location" value="classpath:jdbc.properties"></property>
+    </bean>
+
+    <!--    负责连接数据库-->
+    <bean id="datasource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="closeConnectionPool">
+        <property name="driverClassName" value="${driver}"></property>
+        <property name="password" value="${password}"></property>
+        <property name="username" value="${user}"></property>
+        <property name="url" value="${url}"></property>
+    </bean>
+
+    <!--整合MyBatis框架
+ org.mybatis.spring.SqlSessionFactoryBean是spring+mybatis整合包中提供的工具类，用于获得SqlSession对象的
+ -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 注入dataSource到SqlSessionFactoryBean -->
+        <property name="dataSource" ref="datasource"></property>
+        <!--—name="mapperLocations" 扫描类路径下com目录下的mapper目录下的所有xml文件 做为Mybatis的映射文件  -->
+        <property name="mapperLocations" value="classpath:com/mapper/*.xml"></property>
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+    </bean>
+
+<!--    定义Mybatis事务管理器-->
+    <bean id="tx" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="datasource"></property>
+    </bean>
+<!--    启用Transactional注解，然后引用id=tx的事务管理器-->
+    <tx:annotation-driven transaction-manager="tx"></tx:annotation-driven>
+
+
+
+    <mybatis-spring:scan base-package="com.mapper"></mybatis-spring:scan>
+
+    <context:component-scan base-package="com.mapper"></context:component-scan>
+    <context:component-scan base-package="com.service"></context:component-scan>
+    <context:component-scan base-package="com.aop"></context:component-scan>
+</beans>

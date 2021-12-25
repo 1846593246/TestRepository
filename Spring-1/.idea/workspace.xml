@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9ffaafeb-2ede-4c16-be71-77c433db3925" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:/Program Files/apache-maven-3.8.2" />
+        <option name="userSettingsFile" value="C:\Program Files\apache-maven-3.8.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="#JAVA_HOME" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="8" />
+    <option name="vmOptions" value="-Dfile.encoding=GB2312" />
+  </component>
+  <component name="ProjectId" id="21M671vZVxCCNM6Qyp1B49dcdjC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java/Proxy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../课堂代码/Spring-2" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/main/java/com/bean/Person.java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TestAop.t1">
+    <configuration name="ServiceTestProxy.t1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spring-1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Proxy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Proxy" />
+      <option name="MAIN_CLASS_NAME" value="Proxy.ServiceTestProxy" />
+      <option name="METHOD_NAME" value="t1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test11.t1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spring-2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Test11" />
+      <option name="METHOD_NAME" value="t1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test1.t1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spring-1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestXmlContextApplication.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestXmlContextApplication" />
+      <option name="MAIN_CLASS_NAME" value="TestXmlContextApplication.Test1" />
+      <option name="METHOD_NAME" value="t1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestAop.t1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spring-1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aop" />
+      <option name="MAIN_CLASS_NAME" value="aop.TestAop" />
+      <option name="METHOD_NAME" value="t1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestProxy.t1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Spring-1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Proxy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Proxy" />
+      <option name="MAIN_CLASS_NAME" value="Proxy.TestProxy" />
+      <option name="METHOD_NAME" value="t1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestAop.t1" />
+        <item itemvalue="JUnit.ServiceTestProxy.t1" />
+        <item itemvalue="JUnit.TestProxy.t1" />
+        <item itemvalue="JUnit.Test1.t1" />
+        <item itemvalue="JUnit.Test11.t1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9ffaafeb-2ede-4c16-be71-77c433db3925" name="Default Changelist" comment="" />
+      <created>1637738437753</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637738437753</updated>
+      <workItem from="1637738440547" duration="14178000" />
+      <workItem from="1637817546692" duration="92000" />
+      <workItem from="1637817674684" duration="14599000" />
+      <workItem from="1637845698345" duration="670000" />
+      <workItem from="1637895486102" duration="5542000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="45" key="#Project_Structure" timestamp="1637817592686">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="45" key="#Project_Structure/0.0.1366.768@0.0.1366.768" timestamp="1637817592686" />
+    <state x="275" y="45" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1637745455957">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="45" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1637745455957" />
+    <state x="488" y="103" key="#com.intellij.ide.util.MemberChooser" timestamp="1637842553049">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="488" y="103" key="#com.intellij.ide.util.MemberChooser/0.0.1366.768@0.0.1366.768" timestamp="1637842553049" />
+    <state x="92" y="92" width="1182" height="584" key="DiffContextDialog" timestamp="1637740460235">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="92" y="92" width="1182" height="584" key="DiffContextDialog/0.0.1366.768@0.0.1366.768" timestamp="1637740460235" />
+    <state x="463" y="142" key="FileChooserDialogImpl" timestamp="1637817695725">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="463" y="142" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1637817695725" />
+    <state x="496" y="282" key="Github.CreateGistDialog" timestamp="1637913547202">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="496" y="282" key="Github.CreateGistDialog/0.0.1366.768@0.0.1366.768" timestamp="1637913547202" />
+    <state width="1323" height="35" key="GridCell.Tab.0.bottom" timestamp="1637926083732">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="35" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1637926083732" />
+    <state width="1323" height="35" key="GridCell.Tab.0.center" timestamp="1637926083732">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="35" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1637926083732" />
+    <state width="1323" height="35" key="GridCell.Tab.0.left" timestamp="1637926083732">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="35" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1637926083732" />
+    <state width="1323" height="35" key="GridCell.Tab.0.right" timestamp="1637926083732">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="35" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1637926083732" />
+    <state width="1323" height="238" key="GridCell.Tab.1.bottom" timestamp="1637845101803">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="238" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1637845101803" />
+    <state width="1323" height="238" key="GridCell.Tab.1.center" timestamp="1637845101803">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="238" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1637845101803" />
+    <state width="1323" height="238" key="GridCell.Tab.1.left" timestamp="1637845101803">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="238" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1637845101803" />
+    <state width="1323" height="238" key="GridCell.Tab.1.right" timestamp="1637845101803">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="238" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1637845101803" />
+    <state x="213" y="42" key="Maven.ArtifactSearchDialog" timestamp="1637818309102">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="213" y="42" key="Maven.ArtifactSearchDialog/0.0.1366.768@0.0.1366.768" timestamp="1637818309102" />
+    <state x="239" y="60" width="994" height="708" key="SettingsEditor" timestamp="1637755476580">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="239" y="60" width="994" height="708" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1637755476580" />
+    <state x="482" y="164" key="chooseDestDirectoryDialog" timestamp="1637844592620">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="482" y="164" key="chooseDestDirectoryDialog/0.0.1366.768@0.0.1366.768" timestamp="1637844592620" />
+    <state x="57" y="88" key="new project wizard" timestamp="1637912680707">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="57" y="88" key="new project wizard/0.0.1366.768@0.0.1366.768" timestamp="1637912680707" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1637842134496">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1637842134496" />
+    <state x="362" y="76" key="spring file set editor" timestamp="1637741260656">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="362" y="76" key="spring file set editor/0.0.1366.768@0.0.1366.768" timestamp="1637741260656" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/Proxy/TestProxy.java</url>
+          <line>30</line>
+          <properties class="Proxy.TestProxy" method="t1">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

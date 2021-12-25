@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.PersonnelInRoomBeanMapper" >
+  <resultMap id="BaseResultMap" type="com.bean.PersonnelInRoomBean" >
+    <id column="inroomid" property="inroomid" jdbcType="VARCHAR" />
+    <result column="personnelid" property="personnelid" jdbcType="VARCHAR" />
+    <result column="addressCode" property="addresscode" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="inroomdate" property="inroomdate" jdbcType="TIMESTAMP" />
+    <result column="endDate" property="enddate" jdbcType="DATE" />
+    <result column="bedNum" property="bednum" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    inroomid, personnelid, addressCode, status, inroomdate, endDate, bedNum
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.bean.PersonnelInRoomBeanExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_personnel_inroom
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_personnel_inroom
+    where inroomid = #{inroomid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tbl_personnel_inroom
+    where inroomid = #{inroomid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.bean.PersonnelInRoomBeanExample" >
+    delete from tbl_personnel_inroom
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.bean.PersonnelInRoomBean" >
+    insert into tbl_personnel_inroom (inroomid, personnelid, addressCode, 
+      status, inroomdate, endDate, 
+      bedNum)
+    values (#{inroomid,jdbcType=VARCHAR}, #{personnelid,jdbcType=VARCHAR}, #{addresscode,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{inroomdate,jdbcType=TIMESTAMP}, #{enddate,jdbcType=DATE}, 
+      #{bednum,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bean.PersonnelInRoomBean" >
+    insert into tbl_personnel_inroom
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="inroomid != null" >
+        inroomid,
+      </if>
+      <if test="personnelid != null" >
+        personnelid,
+      </if>
+      <if test="addresscode != null" >
+        addressCode,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="inroomdate != null" >
+        inroomdate,
+      </if>
+      <if test="enddate != null" >
+        endDate,
+      </if>
+      <if test="bednum != null" >
+        bedNum,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="inroomid != null" >
+        #{inroomid,jdbcType=VARCHAR},
+      </if>
+      <if test="personnelid != null" >
+        #{personnelid,jdbcType=VARCHAR},
+      </if>
+      <if test="addresscode != null" >
+        #{addresscode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="inroomdate != null" >
+        #{inroomdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="enddate != null" >
+        #{enddate,jdbcType=DATE},
+      </if>
+      <if test="bednum != null" >
+        #{bednum,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.bean.PersonnelInRoomBeanExample" resultType="java.lang.Integer" >
+    select count(*) from tbl_personnel_inroom
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tbl_personnel_inroom
+    <set >
+      <if test="record.inroomid != null" >
+        inroomid = #{record.inroomid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.personnelid != null" >
+        personnelid = #{record.personnelid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.addresscode != null" >
+        addressCode = #{record.addresscode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.inroomdate != null" >
+        inroomdate = #{record.inroomdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.enddate != null" >
+        endDate = #{record.enddate,jdbcType=DATE},
+      </if>
+      <if test="record.bednum != null" >
+        bedNum = #{record.bednum,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tbl_personnel_inroom
+    set inroomid = #{record.inroomid,jdbcType=VARCHAR},
+      personnelid = #{record.personnelid,jdbcType=VARCHAR},
+      addressCode = #{record.addresscode,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER},
+      inroomdate = #{record.inroomdate,jdbcType=TIMESTAMP},
+      endDate = #{record.enddate,jdbcType=DATE},
+      bedNum = #{record.bednum,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bean.PersonnelInRoomBean" >
+    update tbl_personnel_inroom
+    <set >
+      <if test="personnelid != null" >
+        personnelid = #{personnelid,jdbcType=VARCHAR},
+      </if>
+      <if test="addresscode != null" >
+        addressCode = #{addresscode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="inroomdate != null" >
+        inroomdate = #{inroomdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="enddate != null" >
+        endDate = #{enddate,jdbcType=DATE},
+      </if>
+      <if test="bednum != null" >
+        bedNum = #{bednum,jdbcType=INTEGER},
+      </if>
+    </set>
+    where inroomid = #{inroomid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bean.PersonnelInRoomBean" >
+    update tbl_personnel_inroom
+    set personnelid = #{personnelid,jdbcType=VARCHAR},
+      addressCode = #{addresscode,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      inroomdate = #{inroomdate,jdbcType=TIMESTAMP},
+      endDate = #{enddate,jdbcType=DATE},
+      bedNum = #{bednum,jdbcType=INTEGER}
+    where inroomid = #{inroomid,jdbcType=VARCHAR}
+  </update>
+</mapper>

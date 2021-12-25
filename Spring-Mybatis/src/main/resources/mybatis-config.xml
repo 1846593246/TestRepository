@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--    指向resources下的jdbc.properties的配置文件-->
+    <properties resource="jdbc.properties"/>
+
+
+    <settings>
+        <!-- 打印sql日志
+
+        <setting name="autoMappingBehavior" value="null"/>
+        -->
+
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+
+        <!--        二级缓存-->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+    <!--类型别名-->
+    <typeAliases>
+        <!--        包名 类型别名，默认小写-->
+        <package name="com.bean"/>
+        <!--        全路径 类型别名-->
+        <!--        <typeAlias type="com.bean.DeptBean"></typeAlias>-->
+    </typeAliases>
+
+
+
+</configuration>

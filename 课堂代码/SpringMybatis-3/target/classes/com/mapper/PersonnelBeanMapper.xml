@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.PersonnelBeanMapper" >
+  <resultMap id="BaseResultMap" type="com.bean.PersonnelBean" >
+    <id column="personnelid" property="personnelid" jdbcType="VARCHAR" />
+    <result column="deptid" property="deptid" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="gender" property="gender" jdbcType="VARCHAR" />
+    <result column="mobilePhone" property="mobilephone" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="DATE" />
+    <result column="registeDate" property="registedate" jdbcType="DATE" />
+    <result column="idcardNO" property="idcardno" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.bean.PersonnelBean" extends="BaseResultMap" >
+    <result column="photo" property="photo" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    personnelid, deptid, name, gender, mobilePhone, birthday, registeDate, idcardNO
+  </sql>
+  <sql id="Blob_Column_List" >
+    photo
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.bean.PersonnelBeanExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tbl_personnel
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.bean.PersonnelBeanExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tbl_personnel
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tbl_personnel
+    where personnelid = #{personnelid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tbl_personnel
+    where personnelid = #{personnelid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.bean.PersonnelBeanExample" >
+    delete from tbl_personnel
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.bean.PersonnelBean" >
+    insert into tbl_personnel (personnelid, deptid, name, 
+      gender, mobilePhone, birthday, 
+      registeDate, idcardNO, photo
+      )
+    values (#{personnelid,jdbcType=VARCHAR}, #{deptid,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{gender,jdbcType=VARCHAR}, #{mobilephone,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, 
+      #{registedate,jdbcType=DATE}, #{idcardno,jdbcType=VARCHAR}, #{photo,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.bean.PersonnelBean" >
+    insert into tbl_personnel
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="personnelid != null" >
+        personnelid,
+      </if>
+      <if test="deptid != null" >
+        deptid,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="gender != null" >
+        gender,
+      </if>
+      <if test="mobilephone != null" >
+        mobilePhone,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="registedate != null" >
+        registeDate,
+      </if>
+      <if test="idcardno != null" >
+        idcardNO,
+      </if>
+      <if test="photo != null" >
+        photo,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="personnelid != null" >
+        #{personnelid,jdbcType=VARCHAR},
+      </if>
+      <if test="deptid != null" >
+        #{deptid,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilephone != null" >
+        #{mobilephone,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="registedate != null" >
+        #{registedate,jdbcType=DATE},
+      </if>
+      <if test="idcardno != null" >
+        #{idcardno,jdbcType=VARCHAR},
+      </if>
+      <if test="photo != null" >
+        #{photo,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.bean.PersonnelBeanExample" resultType="java.lang.Integer" >
+    select count(*) from tbl_personnel
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tbl_personnel
+    <set >
+      <if test="record.personnelid != null" >
+        personnelid = #{record.personnelid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deptid != null" >
+        deptid = #{record.deptid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gender != null" >
+        gender = #{record.gender,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mobilephone != null" >
+        mobilePhone = #{record.mobilephone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.birthday != null" >
+        birthday = #{record.birthday,jdbcType=DATE},
+      </if>
+      <if test="record.registedate != null" >
+        registeDate = #{record.registedate,jdbcType=DATE},
+      </if>
+      <if test="record.idcardno != null" >
+        idcardNO = #{record.idcardno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.photo != null" >
+        photo = #{record.photo,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update tbl_personnel
+    set personnelid = #{record.personnelid,jdbcType=VARCHAR},
+      deptid = #{record.deptid,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      gender = #{record.gender,jdbcType=VARCHAR},
+      mobilePhone = #{record.mobilephone,jdbcType=VARCHAR},
+      birthday = #{record.birthday,jdbcType=DATE},
+      registeDate = #{record.registedate,jdbcType=DATE},
+      idcardNO = #{record.idcardno,jdbcType=VARCHAR},
+      photo = #{record.photo,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tbl_personnel
+    set personnelid = #{record.personnelid,jdbcType=VARCHAR},
+      deptid = #{record.deptid,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      gender = #{record.gender,jdbcType=VARCHAR},
+      mobilePhone = #{record.mobilephone,jdbcType=VARCHAR},
+      birthday = #{record.birthday,jdbcType=DATE},
+      registeDate = #{record.registedate,jdbcType=DATE},
+      idcardNO = #{record.idcardno,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bean.PersonnelBean" >
+    update tbl_personnel
+    <set >
+      <if test="deptid != null" >
+        deptid = #{deptid,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        gender = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilephone != null" >
+        mobilePhone = #{mobilephone,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="registedate != null" >
+        registeDate = #{registedate,jdbcType=DATE},
+      </if>
+      <if test="idcardno != null" >
+        idcardNO = #{idcardno,jdbcType=VARCHAR},
+      </if>
+      <if test="photo != null" >
+        photo = #{photo,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where personnelid = #{personnelid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.bean.PersonnelBean" >
+    update tbl_personnel
+    set deptid = #{deptid,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=VARCHAR},
+      mobilePhone = #{mobilephone,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=DATE},
+      registeDate = #{registedate,jdbcType=DATE},
+      idcardNO = #{idcardno,jdbcType=VARCHAR},
+      photo = #{photo,jdbcType=LONGVARCHAR}
+    where personnelid = #{personnelid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bean.PersonnelBean" >
+    update tbl_personnel
+    set deptid = #{deptid,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=VARCHAR},
+      mobilePhone = #{mobilephone,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=DATE},
+      registeDate = #{registedate,jdbcType=DATE},
+      idcardNO = #{idcardno,jdbcType=VARCHAR}
+    where personnelid = #{personnelid,jdbcType=VARCHAR}
+  </update>
+</mapper>
